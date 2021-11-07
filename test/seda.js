@@ -36,17 +36,7 @@ const addresses = {
     account
   );
   
-  const init = async () => {
-    const tx = await wbnb.approve(
-      router.address, 
-      ethers.utils.parseUnits("1", 'ether'), 
-      {gasLimit: 450000, 
-        gasPrice: ethers.utils.parseUnits("5", 'gwei')}
-    );
-    const receipt = await tx.wait(); 
-    console.log('Transaction receipt');
-    console.log(receipt);
-  }
+
   
   factory.on('PairCreated', async (token0, token1, pairAddress) => {
     console.log(`
@@ -99,4 +89,4 @@ const addresses = {
     console.log(receipt);
   });
   
-  init();
+  
